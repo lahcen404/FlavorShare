@@ -1,0 +1,29 @@
+<section class="py-10 bg-gray-50">
+    <h2 class="text-2xl font-bold mb-8 text-center text-orange-600 animate-bounce relative" style="font-family: 'Lobster', cursive;">
+      Popular Recipes
+      <span class="absolute bottom-0 left-0 w-full h-1 bg-green-400 transform scale-x-0 transition-transform duration-1000 ease-out animate-[grow_1s_ease-out_forwards]"></span>
+    </h2>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      <!-- Recipe Card -->
+      <div *ngFor="let recipe of recipes" class="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 duration-300">
+        <!-- Recipe Image -->
+        <div class="h-48 bg-cover bg-center" [style.backgroundImage]="'url(' + recipe.image + ')'"></div>
+  
+        <!-- Card Content -->
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">{{ recipe.title }}</h3>
+          <p class="text-sm text-gray-500 mb-2">{{ recipe.subtitle }}</p>
+  
+          <!-- Star Ratings -->
+          <div class="flex items-center">
+            <span *ngFor="let star of [1, 2, 3, 4, 5]" class="text-yellow-400 text-lg">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.97a1 1 0 00-.364-1.118L2.133 9.397c-.783-.57-.381-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
