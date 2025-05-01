@@ -1,27 +1,76 @@
-# FlavorShare
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.15.
+---
 
-## Development server
+# 🧑‍🍳 FlavorShare: Recipe Sharing Platform
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## 📌 Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**FlavorShare** is a modern, collaborative web application that allows users to discover, share, and rate culinary recipes. It includes profile management and social features like comments and ratings, all wrapped in a responsive and user-friendly interface.
 
-## Build
+The app fetches real recipe data using the public [TheMealDB API](https://www.themealdb.com/api.php), providing a rich culinary experience with real-world data.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🚀 Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 👤 As a user, I can:
+- View a list of recipes retrieved from [TheMealDB](https://www.themealdb.com/api.php).
+- Read a recipe in detail (name, ingredients, instructions, photo, and category).
+- Filter recipes by category (e.g., vegetarian, dessert) or main ingredient.
+- Search for recipes by name or by chef.
+- Comment on and rate recipes (1–5 stars) – stored locally or via a future custom backend.
 
-## Running end-to-end tests
+### 🔒 As an authenticated user:
+- Log in via a local login form (authentication using `LocalStorage`).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🧩 Angular Components
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `navbar`: Navigation bar with category links and search.
+- `home`: Homepage with trending or random recipes.
+- `recipe-list`: List of recipes with filtering options.
+- `recipe-detail`: Detailed view of a selected recipe, with comments and ratings.
+- `login`: Local authentication form.
+- `rating`: Users can rate and review recipes.
+
+---
+
+## 🔧 Angular Services
+
+- `RecipeService`: Fetches data from [TheMealDB API](https://www.themealdb.com/api.php).
+- `RatingService`: Manages local user ratings and comments .
+
+---
+
+## 🛠️ Technologies Used
+
+| Area | Tools & Frameworks |
+|------|---------------------|
+| **Frontend Framework** | Angular 17 |
+| **Languages** | TypeScript, HTML, CSS |
+| **UI Framework** | Tailwind CSS  |
+| **External API** | [TheMealDB API](https://www.themealdb.com/api.php) |
+| **Auth Storage** | LocalStorage |
+| **Dev Tools** | Git, GitHub, Angular CLI, Postman, Figma |
+
+---
+
+## 🔗 Example API Endpoints (TheMealDB)
+
+- List categories: `https://www.themealdb.com/api/json/v1/1/categories.php`
+- Filter by ingredient: `https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken`
+- Search by name: `https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`
+- Recipe details by ID: `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`
+
+---
+
+## 🎨 UI Mockups
+
+Designed using **Figma** 
+- **Home Page**: Showcasing recipe cards  
+- **Recipe Detail Page**: Full recipe view with image, steps, ingredients, and user interactions
+
+---
+
