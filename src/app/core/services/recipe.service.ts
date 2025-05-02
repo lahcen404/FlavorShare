@@ -70,5 +70,23 @@ export class RecipeService {
     );
   }
 
- 
+  
+
+  // Search recipes by name (used in NavBarComponent)
+  searchRecipes(query: string): Observable<Recipe[]> {
+    if (!query.trim()) return of([]);
+    const url = `${this.baseUrl}/search.php?s=${query}`;
+    return this.http.get<MealResponse>(url).pipe(
+      map(response => (response.meals || []).map(meal => ({
+        id: meal.idMeal,
+        title: meal.strMeal,
+        subtitle: 'Delicious Recipe',
+        image: meal.strMealThumb
+      }))),
+      catchError(error => {
+        console.error('Error searching recipes:', error);
+        return of([]);
+      })
+    );
+  }
 }
