@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./shared/navbar/navbar/navbar.component";
-import { HomeComponent } from "./Pages/home/home/home.component";
-import { FooterComponent } from "./shared/footer/footer/footer.component";
-import { RecipeCategoriesComponent } from "./Pages/category/recipe-categories/recipe-categories.component";
-import { PopularRecipesComponent } from "./Pages/popularRecipes/popular-recipes/popular-recipes.component";
+import { NavbarComponent } from './shared/navbar/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer/footer.component';
+import { RecipeDetailComponent } from "./Pages/RecipeDetails/recipe-detail/recipe-detail.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [ NavbarComponent, HomeComponent, FooterComponent, RecipeCategoriesComponent, PopularRecipesComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, RecipeDetailComponent] // Import necessary components
+ // Import necessary components
 })
-export class AppComponent {
-  title = 'FlavorShare';
-}
+export class AppComponent {}
