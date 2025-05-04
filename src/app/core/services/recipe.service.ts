@@ -116,7 +116,7 @@ export class RecipeService {
   getCategories(): Observable<Category[]> {
     const url = `${this.baseUrl}/categories.php`;
     return this.http.get<CategoryResponse>(url).pipe(
-      map(response => response.categories.map(category => ({
+      map(response => response.categories.slice(0,6).map(category => ({
         id: category.idCategory,
         name: category.strCategory,
         image: category.strCategoryThumb
