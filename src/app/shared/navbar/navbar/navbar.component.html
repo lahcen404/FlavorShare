@@ -31,7 +31,7 @@
 
         <!-- Categories Link -->
         <div class="relative group">
-          <a [routerLink]="['/categories']" [ngClass]="{'text-orange-500': isLinkActive('Categories')}" class="text-gray-700 hover:text-orange-500 flex items-center">
+          <a routerLink="categories" [ngClass]="{'text-orange-500': isLinkActive('Categories')}" class="text-gray-700 hover:text-orange-500 flex items-center">
             Categories
           </a>
           <span class="underline-effect"></span>
@@ -74,11 +74,12 @@
           class="absolute top-12 left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg max-h-64 overflow-y-auto z-10">
           <a 
             *ngFor="let recipe of searchResults" 
-            [routerLink]="['/recipe', recipe.id]" 
-            class="flex items-center px-4 py-2 hover:bg-gray-100">
+            [routerLink]="['/recipe', recipe.id]"
+            class="flex items-center px-4 py-2 hover:bg-gray-100"> 
             <img [src]="recipe.image" alt="{{ recipe.title }}" class="h-10 w-10 rounded-full mr-3">
             <span class="text-gray-700">{{ recipe.title }}</span>
           </a>
+          
         </div>
 
         <!-- No Results Message -->

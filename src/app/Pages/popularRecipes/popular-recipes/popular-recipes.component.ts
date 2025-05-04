@@ -19,6 +19,7 @@ export class PopularRecipesComponent implements OnInit {
     this.recipeService.getRecipes('Beef').subscribe({
       next: (recipes) => {
         this.recipes = recipes;
+        console.log(recipes)
       },
       error: (error) => {
         console.error('Failed to load recipes:', error);
