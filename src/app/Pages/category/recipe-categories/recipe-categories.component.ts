@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Category, RecipeService } from '../../../core/services/recipe.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router'; // Import RouterLink
+import { RecipeService, Category } from '../../../core/services/recipe.service'; // Adjust path
 
 @Component({
   selector: 'app-recipe-categories',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink], // Add RouterLink
   templateUrl: './recipe-categories.component.html',
-  styleUrl: './recipe-categories.component.css'
+  styleUrls: ['./recipe-categories.component.css']
 })
 export class RecipeCategoriesComponent implements OnInit {
   categories: Category[] = [];
@@ -18,12 +19,10 @@ export class RecipeCategoriesComponent implements OnInit {
     this.recipeService.getCategories().subscribe({
       next: (categories) => {
         this.categories = categories;
-        console.log('Cateegories:', this.categories); 
       },
       error: (error) => {
         console.error('Error fetching categories:', error);
       }
     });
   }
-
 }

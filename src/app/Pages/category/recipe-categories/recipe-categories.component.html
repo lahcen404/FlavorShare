@@ -4,10 +4,12 @@
     <span class="absolute bottom-0 left-0 w-full h-1 bg-green-400 transform scale-x-0 transition-transform duration-1000 ease-out animate-[grow_1s_ease-out_forwards]"></span>
   </h2>
   <div class="flex flex-wrap justify-center gap-6">
-    <!-- Dynamic Category Card -->
-    <div *ngFor="let category of categories" class="bg-white rounded-xl shadow-md p-4 w-36 transition transform hover:scale-105 hover:shadow-xl duration-300">
-      <div class="bg-green-100 p-4 rounded-full mx-auto mb-3 animate-bounce">
-        <img [src]="category.image" [alt]="category.name" class="w-16 h-16 object-contain">
+    <div *ngFor="let category of categories" 
+         [routerLink]="['/']" 
+         [queryParams]="{ category: category.name }" 
+         class="bg-white rounded-xl shadow-md p-4 w-36 transition transform hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
+      <div class="bg-green-100 p-4 rounded-full mx- auto mb-3 animate-bounce">
+        <img [src]="category.image" [alt]="category.name" class="w-33 h-17 ">
       </div>
       <p class="font-medium text-sm">{{ category.name }}</p>
     </div>

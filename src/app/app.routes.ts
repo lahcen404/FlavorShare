@@ -8,6 +8,7 @@ import { PopularRecipesComponent } from './Pages/popularRecipes/popular-recipes/
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'recipe/:id', component: RecipeDetailComponent },
+  
 //   { path: 'login', component: LoginComponent },
   { path: 'categories', component: RecipeCategoriesComponent },
   { path: 'recipes', component: PopularRecipesComponent}
